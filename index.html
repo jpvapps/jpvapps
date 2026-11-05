@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>JPV Apps | Ideas. Apps. Experiences.</title>
+
+<meta name="description" content="JPV Apps creates useful and engaging digital experiences for education, language learning, community and everyday life.">
+
+<style>
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #0b1b49;
+  background: #ffffff;
+  line-height: 1.6;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8%;
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 12px rgba(0,0,0,.06);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.logo {
+  width: 42px;
+  height: 42px;
+  border-radius: 11px;
+  background: linear-gradient(135deg,#0575ff,#713cff);
+  color: white;
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 30px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #0b1b49;
+  font-weight: 600;
+}
+
+nav a:hover {
+  color: #086bff;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  padding: 75px 10%;
+  color: white;
+
+  background:
+    radial-gradient(circle at 78% 40%, #713cff 0%, transparent 31%),
+    linear-gradient(135deg,#041d4c,#064fa7 55%,#251c91);
+
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-content {
+  max-width: 670px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: clamp(55px,8vw,90px);
+  line-height: 1;
+  margin-bottom: 15px;
+  letter-spacing: -3px;
+}
+
+.hero h2 {
+  font-size: clamp(24px,4vw,38px);
+  font-weight: 400;
+  color: #cce6ff;
+  margin-bottom: 22px;
+}
+
+.hero p {
+  font-size: 18px;
+  max-width: 610px;
+  margin-bottom: 30px;
+  color: #e9f4ff;
+}
+
+.button {
+  display: inline-block;
+  background: #0878ff;
+  color: white;
+  padding: 14px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: .2s;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  background: #2890ff;
+}
+
+
+/* =========================
+   PHONE GRAPHIC
+========================= */
+
+.phone {
+  position: absolute;
+  right: 10%;
+  width: 250px;
+  height: 390px;
+  border: 8px solid #5fc7ff;
+  border-radius: 42px;
+  transform: rotate(8deg);
+  background: linear-gradient(160deg,#087cff,#181a92);
+  box-shadow: 0 0 55px rgba(63,186,255,.5);
+}
+
+.phone-grid {
+  padding: 65px 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.phone-grid div {
+  height: 75px;
+  border-radius: 20px;
+  display: grid;
+  place-items: center;
+  font-size: 34px;
+  background: rgba(255,255,255,.2);
+}
+
+
+/* =========================
+   GENERAL SECTIONS
+========================= */
+
+section {
+  padding: 70px 10%;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 45px;
+}
+
+
+/* =========================
+   APPS
+========================= */
+
+.apps {
+  background: #fafcff;
+}
+
+.app-grid {
+  max-width: 1200px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 30px;
+}
+
+.app-card {
+  border-radius: 22px;
+  padding: 32px;
+
+  display: flex;
+  gap: 25px;
+  align-items: center;
+
+  border: 1px solid #dce8ff;
+
+  box-shadow:
+    0 10px 35px rgba(20,50,120,.07);
+
+  transition: .25s;
+}
+
+.app-card:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 16px 40px rgba(20,50,120,.12);
+}
+
+.jda {
+  background:
+    linear-gradient(135deg,#fff5ff,#f8f1ff);
+}
+
+.language {
+  background:
+    linear-gradient(135deg,#f3faff,#edf6ff);
+}
+
+.app-icon {
+  min-width: 105px;
+  height: 105px;
+  border-radius: 25px;
+
+  display: grid;
+  place-items: center;
+
+  font-size: 35px;
+  font-weight: bold;
+  color: white;
+}
+
+.jda-icon {
+  background:
+    linear-gradient(135deg,#170036,#a500d4);
+}
+
+.language-icon {
+  background:
+    linear-gradient(135deg,#0575ff,#713cff);
+}
+
+.app-card h3 {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.app-card p {
+  color: #405075;
+}
+
+.status {
+  display: inline-block;
+
+  margin-top: 14px;
+  padding: 6px 15px;
+
+  border-radius: 20px;
+
+  font-size: 14px;
+  font-weight: bold;
+
+  background: #e8dcff;
+  color: #6931d5;
+}
+
+.language .status {
+  background: #d7edff;
+  color: #0870d7;
+}
+
+
+/* =========================
+   ABOUT / SUPPORT
+========================= */
+
+.info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 70px;
+
+  max-width: 1100px;
+  margin: auto;
+}
+
+.info h2 {
+  margin-bottom: 15px;
+}
+
+.info p {
+  color: #405075;
+}
+
+.highlight {
+  color: #086bff !important;
+  font-weight: bold;
+}
+
+
+/* =========================
+   PRIVACY
+========================= */
+
+.privacy {
+  background: #f6f9ff;
+  text-align: center;
+}
+
+.privacy p {
+  margin: 15px auto 25px;
+  max-width: 680px;
+  color: #405075;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  background: #061b40;
+  color: white;
+
+  padding: 42px 10%;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-brand {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.footer-tagline {
+  color: #9eafd0;
+}
+
+footer a {
+  color: #c8dcff;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+footer a:hover {
+  color: white;
+}
+
+.copyright {
+  margin-top: 30px;
+  padding-top: 20px;
+
+  border-top:
+    1px solid rgba(255,255,255,.12);
+
+  color: #9eafd0;
+  font-size: 14px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:900px) {
+
+  nav ul {
+    display: none;
+  }
+
+  .phone {
+    display: none;
+  }
+
+  .hero {
+    padding: 70px 8%;
+  }
+
+  .app-grid,
+  .info {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media(max-width:600px) {
+
+  nav {
+    padding: 0 5%;
+  }
+
+  section {
+    padding: 55px 6%;
+  }
+
+  .hero {
+    padding: 65px 6%;
+  }
+
+  .hero h1 {
+    letter-spacing: -2px;
+  }
+
+  .app-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 22px;
+    text-align: center;
+  }
+
+  footer a {
+    display: inline-block;
+    margin: 5px 8px;
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+  <div class="brand">
+
+    <div class="logo">
+      JPV
+    </div>
+
+    JPV Apps
+
+  </div>
+
+
+  <ul>
+
+    <li>
+      <a href="#home">Home</a>
+    </li>
+
+    <li>
+      <a href="#apps">Our Apps</a>
+    </li>
+
+    <li>
+      <a href="#about">About</a>
+    </li>
+
+    <li>
+      <a href="#privacy">Privacy</a>
+    </li>
+
+    <li>
+      <a href="#contact">Contact</a>
+    </li>
+
+  </ul>
+
+</nav>
+
+
+
+<!-- HERO -->
+
+<header
+class="hero"
+id="home">
+
+  <div class="hero-content">
+
+    <h1>
+      JPV Apps
+    </h1>
+
+    <h2>
+      Ideas. Apps. Experiences.
+    </h2>
+
+    <p>
+
+      Welcome to JPV Apps, an independent
+      app development studio creating simple,
+      useful and engaging digital experiences
+      focused on education, learning,
+      community and everyday life.
+
+    </p>
+
+    <a
+    class="button"
+    href="#apps">
+
+      Explore Our Apps →
+
+    </a>
+
+  </div>
+
+
+
+  <div class="phone">
+
+    <div class="phone-grid">
+
+      <div>🎓</div>
+
+      <div>💃</div>
+
+      <div>💬</div>
+
+      <div>🌍</div>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+
+<!-- OUR APPS -->
+
+<section
+class="apps"
+id="apps">
+
+
+<h2 class="section-title">
+Our Apps
+</h2>
+
+
+<div class="app-grid">
+
+
+
+<!-- JDA APP -->
+
+<div class="app-card jda">
+
+
+<div class="app-icon jda-icon">
+
+JDA
+
+</div>
+
+
+<div>
+
+<h3>
+
+JDA – J'Ose Dance Academy
+
+</h3>
+
+
+<p>
+
+The official J'Ose Dance Academy app,
+designed to bring students, classes,
+events and the JDA community together
+in one place.
+
+</p>
+
+
+<span class="status">
+
+Coming Soon
+
+</span>
+
+
+</div>
+
+</div>
+
+
+
+<!-- LANGUAGE LEARNING APP -->
+
+<div class="app-card language">
+
+
+<div class="app-icon language-icon">
+
+🌍
+
+</div>
+
+
+<div>
+
+<h3>
+
+Language Learning App
+
+</h3>
+
+
+<p>
+
+A practical and interactive language-learning
+experience with short lessons, exercises,
+pronunciation practice and guided learning.
+
+Starting with French, with more languages
+planned for the future.
+
+</p>
+
+
+<span class="status">
+
+In Development
+
+</span>
+
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+
+<div class="info">
+
+
+<div>
+
+
+<h2>
+
+💡 About JPV Apps
+
+</h2>
+
+
+<p>
+
+JPV Apps was created by
+<strong>Jose Prince Varghese</strong>
+to develop practical digital products
+from real-world ideas.
+
+</p>
+
+
+<br>
+
+
+<p class="highlight">
+
+Our goal is simple:
+build apps that are useful,
+accessible and enjoyable to use.
+
+</p>
+
+
+</div>
+
+
+
+<!-- SUPPORT -->
+
+<div id="contact">
+
+
+<h2>
+
+🎧 Support & Contact
+
+</h2>
+
+
+<p>
+
+Need help with one of our apps?
+
+Support and privacy information
+for each JPV Apps application
+will be available here.
+
+</p>
+
+
+<br>
+
+
+<a
+class="button"
+href="mailto:YOUR-EMAIL-HERE">
+
+Contact Us
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- PRIVACY -->
+
+<section
+class="privacy"
+id="privacy">
+
+
+<h2>
+
+Privacy & Policies
+
+</h2>
+
+
+<p>
+
+Privacy policies and important information
+concerning JPV Apps applications
+will be published here.
+
+</p>
+
+
+<a
+class="button"
+href="#">
+
+Privacy Policy
+
+</a>
+
+
+</section>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+
+<div class="footer-content">
+
+
+<div>
+
+<div class="footer-brand">
+
+JPV Apps
+
+</div>
+
+
+<div class="footer-tagline">
+
+Ideas. Apps. Experiences.
+
+</div>
+
+</div>
+
+
+
+<div>
+
+<a href="#home">
+Home
+</a>
+
+<a href="#apps">
+Our Apps
+</a>
+
+<a href="#about">
+About
+</a>
+
+<a href="#privacy">
+Privacy
+</a>
+
+<a href="#contact">
+Contact
+</a>
+
+</div>
+
+
+</div>
+
+
+
+<div class="copyright">
+
+© 2026 JPV Apps. All rights reserved.
+
+</div>
+
+
+</footer>
+
+
+</body>
+
+</html>
